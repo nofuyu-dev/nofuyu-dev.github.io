@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>名前 | ポートフォリオ</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'base': '#FFFFFF',
+                        'sub': '#4A4A4A',
+                        'accent': '#2E8B57',
+                        'bglight': '#F0F8F4',
+                        'borderlight': '#E2E8F0'
+                    },
+                    fontFamily: {
+                        'sans': ['Kosugi Maru', 'sans-serif'],
+                        'nunito': ['Nunito', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* カスタムスクロールバーとアニメーション用の少量のCSS */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #F0F8F4; }
+        ::-webkit-scrollbar-thumb { background: #2E8B57; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #1f613d; }
+        
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            will-change: opacity, visibility;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: none;
+        }
+    </style>
+</head>
+<body class="font-sans text-sub bg-base antialiased">
+
+    <header class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-bglight transition-all duration-300" id="header">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="font-nunito font-bold text-2xl text-accent tracking-wider">PORT<span class="text-sub">FOLIO</span></a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-sub hover:text-accent font-bold transition-colors">About</a>
+                    <a href="#values" class="text-sub hover:text-accent font-bold transition-colors">Values & Skills</a>
+                    <a href="#projects" class="text-sub hover:text-accent font-bold transition-colors">Projects</a>
+                    <a href="#career" class="text-sub hover:text-accent font-bold transition-colors">Career</a>
+                    <a href="#contact" class="px-5 py-2 rounded-full bg-accent text-white font-bold hover:bg-green-700 hover:shadow-lg transition-all">Contact</a>
+                </nav>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-sub hover:text-accent focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-bglight">
+            <div class="px-4 pt-2 pb-6 space-y-2 flex flex-col shadow-lg">
+                <a href="#about" class="block px-3 py-2 text-base font-bold text-sub hover:text-accent hover:bg-bglight rounded-md">About</a>
+                <a href="#values" class="block px-3 py-2 text-base font-bold text-sub hover:text-accent hover:bg-bglight rounded-md">Values & Skills</a>
+                <a href="#projects" class="block px-3 py-2 text-base font-bold text-sub hover:text-accent hover:bg-bglight rounded-md">Projects</a>
+                <a href="#career" class="block px-3 py-2 text-base font-bold text-sub hover:text-accent hover:bg-bglight rounded-md">Career</a>
+                <a href="#contact" class="block px-3 py-2 text-base font-bold text-accent hover:bg-bglight rounded-md">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section class="relative bg-gradient-to-b from-bglight/50 to-white pt-24 pb-32 overflow-hidden flex items-center min-h-[80vh]">
+            <!-- Decorative circle -->
+            <div class="absolute -top-24 -right-24 w-96 h-96 bg-bglight rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
+            <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-green-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
+            
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full text-center fade-in-section">
+                <p class="font-nunito text-accent font-bold text-lg md:text-xl tracking-widest mb-4">FRONTEND ENGINEER / SCRUM MASTER</p>
+                <h1 class="text-5xl md:text-7xl font-nunito font-extrabold text-sub mb-6 leading-tight">
+                    チームの<span class="text-accent relative inline-block">ハブ<span class="absolute bottom-1 left-0 w-full h-3 bg-accent/20 -z-10 rounded-sm"></span></span>として<br class="hidden md:block">機能するエンジニア
+                </h1>
+                <p class="text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+                    山田 太郎 / Taro Yamada<br>
+                    <span class="text-base mt-2 inline-block">技術力とコミュニケーションで、開発現場をなめらかに回す潤滑油になります。</span>
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#projects" class="px-8 py-4 bg-accent text-white rounded-full font-bold text-lg hover:bg-green-700 hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
+                        プロジェクトを見る <i class="fa-solid fa-arrow-down ml-2"></i>
+                    </a>
+                    <a href="#contact" class="px-8 py-4 bg-white border-2 border-accent text-accent rounded-full font-bold text-lg hover:bg-bglight hover:-translate-y-1 transition-all duration-300">
+                        お問い合わせ
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-24 bg-white">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row items-center gap-16 fade-in-section">
+                    <!-- Image -->
+                    <div class="w-full md:w-1/2 flex justify-center">
+                        <div class="relative w-64 h-64 md:w-80 md:h-80">
+                            <div class="absolute inset-0 border-4 border-bglight rounded-full transform translate-x-4 translate-y-4"></div>
+                            <img src="https://www.zdnet.com/a/img/resize/c1b486c572c56f189219aadc0fed7a6395e5bec9/2026/03/25/0742aba7-9279-4d7f-b97e-4fa3b0ad91bc/gemini-headshots-2.jpg?auto=webp&width=600" 
+                                 alt="山田太郎 プロフィール画像" 
+                                 class="relative z-10 w-full h-full object-cover rounded-full shadow-2xl border-4 border-white">
+                        </div>
+                    </div>
+                    <!-- Text -->
+                    <div class="w-full md:w-1/2">
+                        <h2 class="font-nunito text-4xl font-bold text-accent mb-2">About Me</h2>
+                        <div class="w-16 h-1 bg-accent mb-8 rounded-full"></div>
+                        <h3 class="text-2xl font-bold mb-4 text-sub">「一緒に働きたい」と思われる<br class="hidden lg:block">エンジニアを目指して</h3>
+                        <div class="space-y-4 text-lg text-gray-700 leading-relaxed">
+                            <p>私が開発において最も大切にしているのは「協調性」です。単に要件を満たすコードを書くのではなく、後から読むメンバーが理解しやすい構造にすること、仕様の不明点があれば積極的に周囲と認識をすり合わせることを心がけています。</p>
+                            <p>プロジェクトで行き詰まっているメンバーがいれば、自身のタスクを調整してペアプログラミングやレビューを通じてサポートに入ります。「チーム全体の成功」を第一に考え、開発現場の潤滑油として機能することにやりがいを感じています。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Values & Skills Section -->
+        <section id="values" class="py-24 bg-bglight/50">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 fade-in-section">
+                    <h2 class="font-nunito text-4xl font-bold text-accent mb-2">Core Values & Skills</h2>
+                    <div class="w-24 h-1 bg-accent mx-auto rounded-full"></div>
+                </div>
+
+                <!-- Core Values Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-borderlight hover:shadow-md transition-shadow fade-in-section text-center">
+                        <div class="w-20 h-20 mx-auto bg-bglight rounded-full flex items-center justify-center mb-6 text-accent text-3xl">
+                            <i class="fa-solid fa-people-arrows"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 border-b-2 border-dashed border-bglight pb-4 inline-block">協調とサポート</h3>
+                        <p class="text-gray-600 text-left">自身のタスク完遂だけでなく、チーム全体のボトルネック解消を優先し、ペアプロ等を通じて柔軟にサポートに入ります。</p>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-borderlight hover:shadow-md transition-shadow fade-in-section text-center" style="transition-delay: 100ms;">
+                        <div class="w-20 h-20 mx-auto bg-bglight rounded-full flex items-center justify-center mb-6 text-accent text-3xl">
+                            <i class="fa-solid fa-hands-holding-child"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 border-b-2 border-dashed border-bglight pb-4 inline-block">メンターシップ</h3>
+                        <p class="text-gray-600 text-left">ジュニアメンバーの技術的成長を促すため、丁寧なコードレビューや設計相談の時間を積極的に設けています。</p>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-borderlight hover:shadow-md transition-shadow fade-in-section text-center" style="transition-delay: 200ms;">
+                        <div class="w-20 h-20 mx-auto bg-bglight rounded-full flex items-center justify-center mb-6 text-accent text-3xl">
+                            <i class="fa-solid fa-heart-circle-check"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 border-b-2 border-dashed border-bglight pb-4 inline-block">心理的安全性</h3>
+                        <p class="text-gray-600 text-left">誰もが意見を言いやすく、失敗を恐れずに挑戦できる、風通しの良いアジャイルなチーム文化の醸成を推進します。</p>
+                    </div>
+                </div>
+
+                <!-- Skills Area -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 fade-in-section">
+                    <div class="bg-white p-8 rounded-3xl border border-bglight shadow-sm">
+                        <h3 class="text-2xl font-bold text-accent mb-6 flex items-center">
+                            <i class="fa-solid fa-laptop-code mr-3"></i> フロントエンド & バックエンド
+                        </h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-check text-accent mt-1 mr-3"></i>
+                                <span><strong class="text-sub">React / Vue.js</strong> を用いたモダンなUI構築とコンポーネント設計。</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-check text-accent mt-1 mr-3"></i>
+                                <span>再利用性と可読性を重視し、属人化を防ぐコード品質の担保。</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-check text-accent mt-1 mr-3"></i>
+                                <span><strong class="text-sub">Node.js / Python</strong> を活用し、フロントエンド側が使いやすいAPI設計。</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-3xl border border-bglight shadow-sm">
+                        <h3 class="text-2xl font-bold text-accent mb-6 flex items-center">
+                            <i class="fa-solid fa-users-gear mr-3"></i> チームビルディング
+                        </h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-check text-accent mt-1 mr-3"></i>
+                                <span>アジャイル開発における<strong class="text-sub">スクラムマスター</strong>としてのプロジェクト推進。</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-check text-accent mt-1 mr-3"></i>
+                                <span>デイリースクラムやレトロスペクティブ等のイベントファシリテーション。</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-check text-accent mt-1 mr-3"></i>
+                                <span>心理的安全性を高めるための、1on1やペアプログラミングの積極的な導入。</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-24 bg-white">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 fade-in-section">
+                    <h2 class="font-nunito text-4xl font-bold text-accent mb-2">Featured Projects</h2>
+                    <div class="w-24 h-1 bg-accent mx-auto rounded-full"></div>
+                </div>
+
+                <div class="space-y-20">
+                    <!-- Project 1 -->
+                    <div class="flex flex-col lg:flex-row gap-10 items-center fade-in-section">
+                        <div class="w-full lg:w-1/2">
+                            <div class="rounded-3xl overflow-hidden shadow-lg border-4 border-bglight group relative">
+                                <img src="https://cdn.dribbble.com/userupload/17730953/file/original-05a2f18aae02857f16dc660924a28639.png?format=webp&resize=800x600&vertical=center" 
+                                     alt="タスク管理ダッシュボード" 
+                                     class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-accent/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            </div>
+                        </div>
+                        <div class="w-full lg:w-1/2 space-y-6">
+                            <span class="inline-block bg-bglight text-accent px-4 py-1 rounded-full text-sm font-bold tracking-wide">
+                                <i class="fa-solid fa-tag mr-1"></i> フロントエンドリード / メンター
+                            </span>
+                            <h3 class="text-3xl font-bold text-sub">社内タスク管理ツールの刷新</h3>
+                            <div class="bg-bglight/30 p-6 rounded-2xl border border-borderlight">
+                                <h4 class="font-bold text-accent mb-2 border-b border-bglight pb-2">プロジェクト概要</h4>
+                                <p class="text-gray-700 mb-4">レガシーシステムからモダンなフレームワーク（React）への全面的なリプレイスメントプロジェクト。</p>
+                                
+                                <h4 class="font-bold text-accent mb-2 border-b border-bglight pb-2">私の貢献・アピールポイント</h4>
+                                <p class="text-gray-700">技術選定やアーキテクチャ設計を主導するとともに、ジュニアメンバーのメンターとして技術サポートを並行して実施しました。共通UIコンポーネントライブラリを整備することで、チーム全体の開発効率を大幅に向上させ、期限内の安定稼働を実現しました。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="flex flex-col lg:flex-row-reverse gap-10 items-center fade-in-section">
+                        <div class="w-full lg:w-1/2">
+                            <div class="rounded-3xl overflow-hidden shadow-lg border-4 border-bglight group relative">
+                                <img src="https://media2.dev.to/dynamic/image/width=1600,height=900,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ftvxzn6bjsf6bj1u89y3p.png" 
+                                     alt="アジャイルミーティング" 
+                                     class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-accent/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            </div>
+                        </div>
+                        <div class="w-full lg:w-1/2 space-y-6">
+                            <span class="inline-block bg-bglight text-accent px-4 py-1 rounded-full text-sm font-bold tracking-wide">
+                                <i class="fa-solid fa-tag mr-1"></i> バックエンド / スクラムマスター
+                            </span>
+                            <h3 class="text-3xl font-bold text-sub">在庫連携APIの開発</h3>
+                            <div class="bg-bglight/30 p-6 rounded-2xl border border-borderlight">
+                                <h4 class="font-bold text-accent mb-2 border-b border-bglight pb-2">プロジェクト概要</h4>
+                                <p class="text-gray-700 mb-4">複数の倉庫システムとECサイトをリアルタイムで連携する、ミッションクリティカルなAPI群の開発。</p>
+                                
+                                <h4 class="font-bold text-accent mb-2 border-b border-bglight pb-2">私の貢献・アピールポイント</h4>
+                                <p class="text-gray-700">複雑な仕様が絡む中、スクラムマスターとして開発プロセスの透明化を徹底しました。デイリースクラムを通じて各メンバーの進捗と課題（ブロッカー）を早期に可視化。部署を跨ぐコミュニケーションを円滑に取り持ち、要件定義のズレによる手戻りを最小限に抑えることに成功しました。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Career Timeline Section -->
+        <section id="career" class="py-24 bg-bglight/30">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 fade-in-section">
+                    <h2 class="font-nunito text-4xl font-bold text-accent mb-2">Career Timeline</h2>
+                    <div class="w-24 h-1 bg-accent mx-auto rounded-full"></div>
+                </div>
+
+                <div class="relative border-l-4 border-bglight ml-6 md:ml-12 space-y-12 pb-8 fade-in-section">
+                    
+                    <!-- 2020 -->
+                    <div class="relative pl-8 md:pl-12">
+                        <div class="absolute -left-3.5 top-1 w-6 h-6 bg-base border-4 border-accent rounded-full shadow"></div>
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-borderlight relative">
+                            <div class="absolute top-6 -left-4 w-4 h-4 bg-white border-t border-l border-borderlight transform -rotate-45"></div>
+                            <span class="font-nunito text-accent font-extrabold text-xl">2020</span>
+                            <h3 class="text-xl font-bold text-sub mt-1 mb-2">Web Engineer</h3>
+                            <p class="text-gray-600">SIerにてキャリアをスタート。基礎的なシステム設計・実装業務を幅広く経験し、開発の基盤を固める。</p>
+                        </div>
+                    </div>
+
+                    <!-- 2022 -->
+                    <div class="relative pl-8 md:pl-12">
+                        <div class="absolute -left-3.5 top-1 w-6 h-6 bg-base border-4 border-accent rounded-full shadow"></div>
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-borderlight relative">
+                            <div class="absolute top-6 -left-4 w-4 h-4 bg-white border-t border-l border-borderlight transform -rotate-45"></div>
+                            <span class="font-nunito text-accent font-extrabold text-xl">2022</span>
+                            <h3 class="text-xl font-bold text-sub mt-1 mb-2">Frontend Lead</h3>
+                            <p class="text-gray-600">自社開発企業へ転職。Reactを用いたUI開発をリードし、後進の育成やコンポーネント設計の標準化に従事。</p>
+                        </div>
+                    </div>
+
+                    <!-- 2024 -->
+                    <div class="relative pl-8 md:pl-12">
+                        <div class="absolute -left-3.5 top-1 w-6 h-6 bg-base border-4 border-accent rounded-full shadow"></div>
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-borderlight relative">
+                            <div class="absolute top-6 -left-4 w-4 h-4 bg-white border-t border-l border-borderlight transform -rotate-45"></div>
+                            <span class="font-nunito text-accent font-extrabold text-xl">2024</span>
+                            <h3 class="text-xl font-bold text-sub mt-1 mb-2">Scrum Master</h3>
+                            <p class="text-gray-600">アジャイル開発の導入に伴いスクラムマスターを兼任。各種イベントのファシリテーションを行いチームの生産性向上に貢献。</p>
+                        </div>
+                    </div>
+
+                    <!-- 2026 -->
+                    <div class="relative pl-8 md:pl-12">
+                        <div class="absolute -left-3.5 top-1 w-6 h-6 bg-accent border-4 border-white rounded-full shadow animate-pulse"></div>
+                        <div class="bg-bglight p-6 rounded-2xl shadow-sm border border-accent/30 relative">
+                            <div class="absolute top-6 -left-4 w-4 h-4 bg-bglight border-t border-l border-accent/30 transform -rotate-45"></div>
+                            <span class="font-nunito text-accent font-extrabold text-xl">2026 - Current</span>
+                            <h3 class="text-xl font-bold text-sub mt-1 mb-2">Team Hub Engineer</h3>
+                            <p class="text-gray-800 font-medium">チームのハブとして、開発の円滑化とプロダクト価値の最大化に引き続き注力。新しい技術やより良いチーム体制の探求を続けています。</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact & Footer Section -->
+        <section id="contact" class="py-24 bg-white border-t border-bglight">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-in-section">
+                <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-bglight text-accent text-3xl mb-6">
+                    <i class="fa-regular fa-paper-plane"></i>
+                </div>
+                <h2 class="font-nunito text-4xl font-bold text-sub mb-6">Let's Talk!</h2>
+                <p class="text-xl text-gray-600 mb-10 leading-relaxed">
+                    チーム開発や新しいプロジェクトについて、<br class="hidden sm:block">
+                    ぜひお気軽にお話ししましょう。
+                </p>
+                <a href="mailto:hello@example.com" class="inline-block bg-accent text-white px-10 py-5 rounded-full font-nunito font-bold text-xl hover:bg-green-700 hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                    <i class="fa-regular fa-envelope mr-2"></i> hello@example.com
+                </a>
+                
+                <div class="mt-16 flex justify-center space-x-6">
+                    <a href="#" class="w-12 h-12 flex items-center justify-center rounded-full bg-bglight text-accent hover:bg-accent hover:text-white transition-colors text-xl">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="#" class="w-12 h-12 flex items-center justify-center rounded-full bg-bglight text-accent hover:bg-accent hover:text-white transition-colors text-xl">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="w-12 h-12 flex items-center justify-center rounded-full bg-bglight text-accent hover:bg-accent hover:text-white transition-colors text-xl">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-sub text-white py-8 text-center">
+        <p class="font-nunito text-sm opacity-80">&copy; 2026 Taro Yamada. All rights reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // モバイルメニューのトグル
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // モバイルメニューのリンクをクリックしたらメニューを閉じる
+        const mobileLinks = menu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // スクロール時のアニメーション（Intersection Observer）
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-section').forEach((section) => {
+            observer.observe(section);
+        });
+
+        // ヘッダーのスクロールシャドウ効果
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 10) {
+                header.classList.add('shadow-md');
+                header.classList.remove('shadow-sm');
+            } else {
+                header.classList.add('shadow-sm');
+                header.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body>
+</html>
